@@ -34,6 +34,9 @@ function App() {
   return (
     <>
       <Header />
+      <div>
+        <Form onFormSubmit={addNote} />
+      </div>
       <div className="note-board">
         {notes.map(note => 
           <Note
@@ -42,9 +45,6 @@ function App() {
             title={note.title}
             content={note.content}
             deleteNote={deleteNote} />)}
-      </div>
-      <div>
-        <Form onFormSubmit={addNote} />
       </div>
       <Footer />
     </>
