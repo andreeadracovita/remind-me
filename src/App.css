@@ -45,6 +45,10 @@ footer {
   color: #C2C2C2;
 }
 
+.complete {
+  color: #FF1E8E;
+}
+
 form {
   padding: 0px;
   margin: 0px;

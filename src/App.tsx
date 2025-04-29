@@ -14,7 +14,7 @@ function App() {
 
   const [notes, setNotes] = useState([]);
 
-  const handleFormSubmit = (input) => {
+  const addNote = (input) => {
     event.preventDefault()
 
     setNotes([
@@ -27,6 +27,10 @@ function App() {
     ]);
   }
 
+  const deleteNote = (id) => {
+    setNotes(notes.filter(note => note.id !== id));
+  }
+
   return (
     <>
       <Header />
@@ -34,11 +38,13 @@ function App() {
         {notes.map(note => 
           <Note
             key={note.id}
+            id={note.id}
             title={note.title}
-            content={note.content} />)}
+            content={note.content}
+            deleteNote={deleteNote} />)}
       </div>
       <div>
-        <Form onFormSubmit={handleFormSubmit} />
+        <Form onFormSubmit={addNote} />
       </div>
       <Footer />
     </>
