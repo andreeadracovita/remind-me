@@ -1,12 +1,9 @@
-function Note() {
-
-	const title = "This is the note title";
-	const content = "This is the note content";
+function Note(props) {
 
 	return (
 		<div className="note">
-			<p className="title" contentEditable>{title}</p>
-			<p className="content" contentEditable>{content}</p>
+			<p className="title">{props.title}</p>
+			<p className="content">{props.content}</p>
 		</div>
 	)
 }
