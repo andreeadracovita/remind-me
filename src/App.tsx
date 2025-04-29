@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <Header />
-      <div>
+      <div className="note-board">
         {notes.map(note => 
           <Note
             key={note.id}
